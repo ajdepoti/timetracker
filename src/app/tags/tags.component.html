@@ -1,0 +1,27 @@
+<h2>Tags</h2>
+<ul>
+  <li *ngFor="let tag of tags" (click)="onSelect(tag)">
+    <span class="badge">{{tag.id}}</span> {{tag.name}}
+  </li>
+</ul>
+
+<br/>
+
+<div *ngIf="show">
+  <div class="container">
+    <div class="row">
+      <div class="col">Tag Details</div>
+    </div>
+    <div class="row">
+      <div class="col">ID:</div>
+      <div class="col">{{selectedTag.id}}</div>
+    </div>
+    <div class="row">
+      <div class="col">Name:</div>
+      <div class="col"><input [(ngModel)]="selectedTag.name" placeholder="name"></div>
+    </div>
+    <div class="row">
+      <div class="col"><button (click)="show = !show">Hide Details</button></div>
+    </div>
+  </div>
+</div>

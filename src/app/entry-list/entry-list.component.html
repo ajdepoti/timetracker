@@ -1,0 +1,8 @@
+<h3>
+  Entry List
+</h3>
+<ul class="items">
+  <li *ngFor="let entry of entries" (click)="onSelect(entry)" [class.selected]="isSelected(entry)">
+    <span class="badge">{{entry.id}}</span>{{entry.tag}}
+  </li>
+</ul>

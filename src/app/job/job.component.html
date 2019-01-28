@@ -1,2 +1,15 @@
-<div class='indent'>job works!</div>
+<div class="container">
+    <div class="row">
+        <div class="col"><button type="button">Add</button></div>
+    </div>
+</div>
 
+<BR />
+
+<div class="container">
+    <div class="row">
+        <div class="" *ngFor="let job of jobs" (click)="onSelect(job)" [class.selected]="isSelected(job)">
+            <div class="">{{job.name}}</div>
+        </div>
+    </div>
+</div>

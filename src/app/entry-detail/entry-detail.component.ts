@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, ParamMap } from '@angular/router';
-import { TimeEntry } from '../classes/time-entry';
+//import { TimeEntry } from '../classes/time-entry';
 
 @Component({
   selector: 'app-entry-detail',
@@ -8,16 +8,11 @@ import { TimeEntry } from '../classes/time-entry';
   styleUrls: ['./entry-detail.component.css']
 })
 export class EntryDetailComponent implements OnInit {
-
-  //public entry: TimeEntry;
-  public entryId;
+  public entryId:number;
 
   constructor(private route: ActivatedRoute, private router: Router) { }
 
-  //snapshot doesn't work navigating back to same component.  ngonInit doesn't get called
   ngOnInit() {
-    //let id = parseInt(this.route.snapshot.paramMap.get('id'));
-    //this.entryId = id;
     this.route.paramMap.subscribe((params: ParamMap) => {
       let id = parseInt(params.get('id'));
       this.entryId = id;
@@ -37,6 +32,6 @@ export class EntryDetailComponent implements OnInit {
 
   gotoEntryList(){
     let selectedId = this.entryId ? this.entryId : null;
-    this.router.navigate(['/entryList', {id: selectedId}])
+    this.router.navigate(['/entryList', {id: selectedId}]);
   }
 }

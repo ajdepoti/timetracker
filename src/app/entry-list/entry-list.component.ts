@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap }  from '@angular/router';
 import { Entries } from '../data/entries';
-import { TimeEntry } from '../classes/time-entry';
+//import { TimeEntry } from '../classes/time-entry';
 
 
 @Component({
